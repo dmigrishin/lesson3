@@ -14,7 +14,7 @@ def weather_by_city(city_name):
     if 'data' in weather:
         if 'current_condition' in weather['data']:
             try:
-                return weather['data']['current_condition']
+                return weather['data']['current_condition'][0]
             except(IndexError, TypeError):
                 return False
     return False
