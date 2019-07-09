@@ -11,8 +11,7 @@ RUN pip3 --no-cache-dir install -r requirements.txt
 
 EXPOSE 5000
 
-ENTRYPOINT ["python3"]
-
-RUN chmod 644 server.py
-CMD ["server.py"]
+ENV FLASK_APP=webapp
+    
+CMD ["flask","run","--host","0.0.0.0"]
 
